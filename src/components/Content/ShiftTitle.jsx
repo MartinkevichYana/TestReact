@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Content from './Content';
+import ShiftItem from "./ShiftItem";
 
 const GridTitle = styled.div`
     padding: 8px 18px;
@@ -9,19 +10,16 @@ const GridTitle = styled.div`
     text-transform: uppercase;
     color: #8697A8;
     text-align: left;
+    &.mobile {
+        padding: 8px 0;
+        width: 48%;
+    }
 `
 
-const ShiftTitle = (props) => {
+const ShiftTitle = ({titleName, isMobile}) => {
 
     return (
-        <Content>
-            <GridTitle>Date</GridTitle>
-            <GridTitle>Shift type</GridTitle>
-            <GridTitle>Period</GridTitle>
-            <GridTitle>Hours</GridTitle>
-            <GridTitle>Salary (gross)</GridTitle>
-            <GridTitle>Bonus (gross)</GridTitle>
-        </Content>
+        <GridTitle className={isMobile ? "mobile" : ""}>{titleName}</GridTitle>
     );
 }
 

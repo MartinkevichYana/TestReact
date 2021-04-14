@@ -12,6 +12,9 @@ const Wrapper = styled.div`
     @media (max-width: 1440px) {
         padding: calc(15px + (44 - 15)*(100vw - 320px)/(1440 - 320));
     }
+    &.mobile {
+        opacity: 0.2;
+    }
 `
 
 const Arrow = styled.div`
@@ -20,16 +23,16 @@ const Arrow = styled.div`
     }
 `
 
-const ContentMain = (props) => {
+const ContentMain = ({content, contentTitle, isSidebarVisible, isMobile}) => {
 
     return (
-        <Wrapper>
+        <Wrapper className={isSidebarVisible && isMobile ? "mobile" : ""}>
             <Header>
                 <Arrow><img src={arrow} alt="arrow left" /></Arrow>
-                <Button />
+                {!isMobile && <Button />}
             </Header>
             <Title />
-            <MainContent content={props.content} />
+            <MainContent content={content} contentTitle={contentTitle} isMobile={isMobile} />
         </Wrapper>
     );
 }

@@ -10,13 +10,10 @@ const ButtonSign = styled.button`
     outline: none;
     cursor: pointer;
     transition: 0.2s all;
+    white-space: nowrap;
     
     &:hover {
         background: rgba(5, 131, 115, 0.2);
-    }
-    
-    @media (max-width: 900px) {
-        display: none;
     }
 `
 

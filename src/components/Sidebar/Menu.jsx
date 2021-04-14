@@ -3,6 +3,11 @@ import styled from "styled-components";
 
 const Nav = styled.nav`
     flex-grow: 1;
+    
+    &.mobile {
+        order: 2;
+        margin-top: 35px;
+    }
 `
 
 const Item = styled.a`
@@ -18,6 +23,12 @@ const Item = styled.a`
     &:hover {
         background: #fff;
     }
+    &.mobile {
+        background: ${props => props.active ? "#E8EAF0" : "transparent"};
+        &:hover {
+            background: #E8EAF0;
+        }
+    }
 `
 
 const SvgIcon = styled.svg`
@@ -28,32 +39,36 @@ const SvgIcon = styled.svg`
 
 const ItemText = styled.span`
     margin-left: 18px;
+    
+    @media (max-width: 700px) {
+        font-size: 12px;
+    }
 `
 
-const Menu = () => {
+const Menu = ({isMobile}) => {
     return (
-        <Nav>
-            <Item active>
+        <Nav className={isMobile ? "mobile" : ""} >
+            <Item active className={isMobile ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#dashboard'></use></SvgIcon>
                 <ItemText>My Dashboard</ItemText>
             </Item>
-            <Item>
+            <Item className={isMobile ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#people'></use></SvgIcon>
                 <ItemText>People</ItemText>
             </Item>
-            <Item>
+            <Item className={isMobile ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#operations'></use></SvgIcon>
                 <ItemText>Operations</ItemText>
             </Item>
-            <Item>
+            <Item className={isMobile ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#planning'></use></SvgIcon>
                 <ItemText>Schedule Planning</ItemText>
             </Item>
-            <Item>
+            <Item className={isMobile ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#administration'></use></SvgIcon>
                 <ItemText>Administration</ItemText>
             </Item>
-            <Item>
+            <Item className={isMobile ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#tracking'></use></SvgIcon>
                 <ItemText>Action Tracking</ItemText>
             </Item>

@@ -11,6 +11,14 @@ const GridContent = styled.div`
         box-shadow: 0px 2px 2px rgba(12, 20, 39, 0.1);
         border-radius: 20px;
     }
+    &.mobile {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 13px 16px;
+        &:first-child {
+            margin-top: 15px;
+        }
+    }
 `
 
 const Content =  ({className = "", children}) => {

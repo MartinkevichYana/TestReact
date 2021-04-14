@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from "styled-components";
 import avatar from '../../images/avatar.png';
+import Button from "../Content/Button";
 
 const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 15px;
-    max-width: 134px;
 `
-const BottomIcon = () => {
+const BottomIcon = ({isMobile}) => {
     return (
-        <Container>
-            <img src={avatar} alt='Darlene Robertson' />
-            <span>Darlene Robertson</span>
-        </Container>
+        <div>
+            <Container>
+                <img src={avatar} alt='Darlene Robertson' />
+                <span>Darlene Robertson</span>
+                {isMobile && <Button /> }
+            </Container>
+        </div>
     );
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import ShiftTitle from './ShiftTitle';
 import ShiftItem from './ShiftItem';
+import Content from "./Content";
 
 const Table = styled.table`
 
@@ -69,15 +70,19 @@ const GridItemContent = styled.div`
     display: flex;
 `
 
-const MainContent = (props) => {
+const MainContent = ({isMobile, content, contentTitle}) => {
 
-    let shiftsElements = props.content.map( d => <ShiftItem date={d.date} />);
+    let title = contentTitle.map( d => <ShiftTitle titleName={d} isMobile={isMobile} />);
+
+    let shiftsElements = content.map( d =>
+        <ShiftItem date={d.date} type={d.type} period={d.period} hours={d.hours} salary={d.salary} bonus={d.bonus}
+            contentTitle={contentTitle} isMobile={isMobile} />);
 
     return (
         <div>
-            <ShiftTitle />
+            {!isMobile && <Content>{title}</Content>}
             { shiftsElements }
-        <Table>
+            {/*<Table>
             <colgroup>
                 <col width='20%' />
                 <col width='16%' />
@@ -117,7 +122,7 @@ const MainContent = (props) => {
                     <td>30</td>
                 </Tr>
             </tbody>
-        </Table>
+        </Table>*/}
         </div>
     );
 }

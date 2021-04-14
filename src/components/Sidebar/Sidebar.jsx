@@ -16,16 +16,22 @@ const Wrapper = styled.div`
         padding-top: calc(30px + (45 - 30)*(100vw - 320px)/(1440 - 320));
     }
     
-    @media (max-width: 900px) {
-        display: none;
+    &.mobile {
+        position: absolute;
+        top: 56px;
+        z-index: 10;
+        width: 100%;
+        max-width: 320px;
+        background: #fff;
+        box-shadow: 0px 4px 7px rgb(12 20 39 / 10%);
     }
 `
 
-const Sidebar = () => {
+const Sidebar = ({isMobile}) => {
     return (
-        <Wrapper>
-            <Menu />
-            <BottomIcon />
+        <Wrapper className={isMobile ? "mobile" : ""} >
+            <Menu isMobile={isMobile} />
+            <BottomIcon isMobile={isMobile} />
         </Wrapper>
     );
 }
