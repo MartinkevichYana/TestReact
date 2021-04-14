@@ -1,24 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import GlobalStyle from './globalStyles';
+import Sidebar from './components/Sidebar/Sidebar';
+import ContentMain from './components/Content/ContentMain';
+import React from "react";
 
-function App() {
+const Wrapper = styled.div`
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    color: #0C1427;
+    background: #fff;
+`
+
+let initialStore = [
+    {date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+    {date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+    {date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+    {date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+    {date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'}
+]
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Wrapper>
+          <GlobalStyle />
+          <Sidebar />
+          <ContentMain content={initialStore} />
+      </Wrapper>
   );
 }
 

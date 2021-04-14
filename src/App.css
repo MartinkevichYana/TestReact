@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  src: local('Inter'), url(./font/Inter-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  src: local('Inter'), url(./font/Inter-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  src: local('Inter'), url(./font/Inter-Bold.woff) format('woff');
+}
