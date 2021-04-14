@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import Content from './Content';
-import ShiftItem from "./ShiftItem";
 
 const GridTitle = styled.div`
     padding: 8px 18px;

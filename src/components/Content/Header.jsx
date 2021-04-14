@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import Button from './Button';
 
 const Top = styled.div`
     display: flex;

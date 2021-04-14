@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Nav = styled.nav`
     flex-grow: 1;
-    
+
     &.mobile {
         order: 2;
         margin-top: 35px;

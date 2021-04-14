@@ -17,20 +17,14 @@ const Wrapper = styled.div`
     }
 `
 
-const Arrow = styled.div`
-    @media (max-width: 900px) {
-        display: none;
-    }
-`
-
 const ContentMain = ({content, contentTitle, isSidebarVisible, isMobile}) => {
 
     return (
         <Wrapper className={isSidebarVisible && isMobile ? "mobile" : ""}>
-            <Header>
-                <Arrow><img src={arrow} alt="arrow left" /></Arrow>
-                {!isMobile && <Button />}
-            </Header>
+            {!isMobile && <Header>
+                <div><img src={arrow} alt="arrow left" /></div>
+                <Button />
+            </Header>}
             <Title />
             <MainContent content={content} contentTitle={contentTitle} isMobile={isMobile} />
         </Wrapper>

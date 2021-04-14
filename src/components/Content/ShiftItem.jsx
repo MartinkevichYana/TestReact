@@ -19,18 +19,6 @@ const TextNearImg = styled.span`
     }
 `
 
-const GridContent = styled.div`
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1.2fr;
-    &.border {
-        margin-bottom: 10px;
-        border: 1px solid rgba(12, 20, 39, 0.05);
-        box-sizing: border-box;
-        box-shadow: 0px 2px 2px rgba(12, 20, 39, 0.1);
-        border-radius: 20px;
-    }
-`
-
 const GridItem = styled.div`
     padding: 18px;
     &.mobile {
@@ -50,25 +38,6 @@ const GridItemContent = styled.div`
 const ShiftItem = (props) => {
 
     return (
-        /*<Content className="border mobileGrid">
-            <ShiftTitle className="mobile" />
-            <GridItem>
-                <GridItemContent>
-                    <SvgIcon><use xlinkHref='/images/sprite.svg#man'></use></SvgIcon>
-                    <TextNearImg>January 06, 2020</TextNearImg>
-                </GridItemContent>
-            </GridItem>
-            <GridItem dataName="date">Afternoon</GridItem>
-            <GridItem dataName="date">
-                <GridItemContent>
-                    <SvgIcon color={'transparent'}><use xlinkHref='/images/sprite.svg#clock'></use></SvgIcon>
-                    <TextNearImg>15:00 - 23:00</TextNearImg>
-                </GridItemContent>
-            </GridItem>
-            <GridItem dataName="date">8h</GridItem>
-            <GridItem dataName="date">$1,630</GridItem>
-            <GridItem dataName="date">30</GridItem>
-        </Content>*/
         <Content className={props.isMobile ? "mobile border" : "border"}>
             {props.isMobile && <ShiftTitle titleName={props.contentTitle[0]} isMobile={props.isMobile} />}
             <GridItem className={props.isMobile ? "mobile" : ""}>

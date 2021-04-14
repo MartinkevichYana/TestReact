@@ -1,14 +1,11 @@
 import React from 'react';
 import Select from "react-select";
 import styled from "styled-components";
-import PerfectScrollbar from "react-perfect-scrollbar";
 import Header from './Header';
-import "react-perfect-scrollbar/dist/css/styles.css";
 
 const TitleH1 = styled.h1`
     font-weight: 700;
     font-size: 40px;
-    
     @media (max-width: 1440px) {
         font-size: calc(24px + (40 - 24)*(100vw - 320px)/(1440 - 320));
     }
