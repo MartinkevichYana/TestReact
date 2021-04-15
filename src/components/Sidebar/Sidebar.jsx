@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import Menu from './Menu';
 import BottomIcon from './BottomIcon';
+import {IS_MOBILE} from "../../constants";
 
 const Wrapper = styled.div`
     display: flex;
@@ -27,11 +28,11 @@ const Wrapper = styled.div`
     }
 `
 
-const Sidebar = ({isMobile}) => {
+const Sidebar = () => {
     return (
-        <Wrapper className={isMobile ? "mobile" : ""} >
-            <Menu isMobile={isMobile} />
-            <BottomIcon isMobile={isMobile} />
+        <Wrapper className={IS_MOBILE ? "mobile" : ""} >
+            <Menu />
+            <BottomIcon />
         </Wrapper>
     );
 }

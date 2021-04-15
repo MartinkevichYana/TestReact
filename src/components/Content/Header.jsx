@@ -8,10 +8,10 @@ const Top = styled.div`
     justify-content: space-between;
 `
 
-const Header = (props) => {
+const Header = ({children}) => {
     return (
         <Top>
-            {props.children}
+            {children}
         </Top>
     );
 }

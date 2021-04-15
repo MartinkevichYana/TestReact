@@ -5,6 +5,7 @@ import Header from './Header';
 import Title from "./Title";
 import MainContent from "./MainContent";
 import Button from "./Button";
+import {IS_MOBILE} from "../../constants";
 
 const Wrapper = styled.div`
     padding: 44px;
@@ -17,16 +18,16 @@ const Wrapper = styled.div`
     }
 `
 
-const ContentMain = ({content, contentTitle, isSidebarVisible, isMobile}) => {
+const ContentMain = ({content, isSidebarVisible}) => {
 
     return (
-        <Wrapper className={isSidebarVisible && isMobile ? "mobile" : ""}>
-            {!isMobile && <Header>
+        <Wrapper className={isSidebarVisible && IS_MOBILE ? "mobile" : ""}>
+            {!IS_MOBILE && <Header>
                 <div><img src={arrow} alt="arrow left" /></div>
                 <Button />
             </Header>}
             <Title />
-            <MainContent content={content} contentTitle={contentTitle} isMobile={isMobile} />
+            <MainContent content={content} />
         </Wrapper>
     );
 }

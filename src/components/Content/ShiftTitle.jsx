@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {IS_MOBILE} from "../../constants";
 
 const GridTitle = styled.div`
     padding: 8px 18px;
@@ -14,10 +15,10 @@ const GridTitle = styled.div`
     }
 `
 
-const ShiftTitle = ({titleName, isMobile}) => {
+const ShiftTitle = ({titleName}) => {
 
     return (
-        <GridTitle className={isMobile ? "mobile" : ""}>{titleName}</GridTitle>
+        <GridTitle className={IS_MOBILE ? "mobile" : ""}>{titleName}</GridTitle>
     );
 }
 

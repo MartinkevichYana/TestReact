@@ -5,7 +5,7 @@ import GlobalStyle from './globalStyles';
 import Sidebar from './components/Sidebar/Sidebar';
 import ContentMain from './components/Content/ContentMain';
 import HeaderMobile from "./components/Mobile/HeaderMobile";
-import Content from "./components/Content/Content";
+import {IS_MOBILE} from "./constants";
 
 const Wrapper = styled.div`
     display: flex;
@@ -13,7 +13,6 @@ const Wrapper = styled.div`
     margin: 0 auto;
     color: #0C1427;
     background: #fff;
-    
     &.mobile {
         flex-direction: column;
     }
@@ -21,27 +20,25 @@ const Wrapper = styled.div`
 
 let initialStore = {
     data: [
-        {date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
-        {date: 'January 07, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
-        {date: 'January 08, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
-        {date: 'January 09, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
-        {date: 'January 10, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
-        {date: 'January 11, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
-        {date: 'January 12, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'}
-        ],
-    title: ['Date', 'Shift type', 'Period', 'Hours', 'Salary (gross)', 'Bonus (gross)']
+        {id: '1', date: 'January 06, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+        {id: '2', date: 'January 07, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+        {id: '3', date: 'January 08, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+        {id: '4', date: 'January 09, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+        {id: '5', date: 'January 10, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+        {id: '6', date: 'January 11, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'},
+        {id: '7', date: 'January 12, 2020', type: 'Afternoon', period: '15:00 - 23:00', hours: '8h', salary: '$1,630', bonus: '30'}
+        ]
 }
 
-function App(props) {
-    const isMobile = window.innerWidth < 900;
-    const [isSidebarVisible, setIsSidebarVisible] = useState(!isMobile);
+function App() {
+    const [isSidebarVisible, setIsSidebarVisible] = useState(!IS_MOBILE);
 
   return (
-      <Wrapper>
+      <Wrapper className={IS_MOBILE ? "mobile" : ""} >
           <GlobalStyle />
-          {isMobile && <HeaderMobile handleSidebarVisibility={ () => setIsSidebarVisible(!isSidebarVisible)} isSidebarVisible={isSidebarVisible} />}
-          {isSidebarVisible && <Sidebar isMobile={isMobile} />}
-          <ContentMain content={initialStore.data} contentTitle={initialStore.title} isSidebarVisible={isSidebarVisible} isMobile={isMobile} />
+          {IS_MOBILE && <HeaderMobile handleSidebarVisibility={ () => setIsSidebarVisible(!isSidebarVisible)} isSidebarVisible={isSidebarVisible} />}
+          {isSidebarVisible && <Sidebar />}
+          <ContentMain content={initialStore.data} isSidebarVisible={isSidebarVisible} />
       </Wrapper>
   );
 }

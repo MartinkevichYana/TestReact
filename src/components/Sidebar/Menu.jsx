@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {IS_MOBILE} from "../../constants";
 
 const Nav = styled.nav`
     flex-grow: 1;
@@ -45,30 +46,30 @@ const ItemText = styled.span`
     }
 `
 
-const Menu = ({isMobile}) => {
+const Menu = () => {
     return (
-        <Nav className={isMobile ? "mobile" : ""} >
-            <Item active className={isMobile ? "mobile" : ""}>
+        <Nav className={IS_MOBILE ? "mobile" : ""} >
+            <Item active className={IS_MOBILE ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#dashboard'></use></SvgIcon>
                 <ItemText>My Dashboard</ItemText>
             </Item>
-            <Item className={isMobile ? "mobile" : ""}>
+            <Item className={IS_MOBILE ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#people'></use></SvgIcon>
                 <ItemText>People</ItemText>
             </Item>
-            <Item className={isMobile ? "mobile" : ""}>
+            <Item className={IS_MOBILE ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#operations'></use></SvgIcon>
                 <ItemText>Operations</ItemText>
             </Item>
-            <Item className={isMobile ? "mobile" : ""}>
+            <Item className={IS_MOBILE ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#planning'></use></SvgIcon>
                 <ItemText>Schedule Planning</ItemText>
             </Item>
-            <Item className={isMobile ? "mobile" : ""}>
+            <Item className={IS_MOBILE ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#administration'></use></SvgIcon>
                 <ItemText>Administration</ItemText>
             </Item>
-            <Item className={isMobile ? "mobile" : ""}>
+            <Item className={IS_MOBILE ? "mobile" : ""}>
                 <SvgIcon><use xlinkHref='/images/sprite-sidebar.svg#tracking'></use></SvgIcon>
                 <ItemText>Action Tracking</ItemText>
             </Item>

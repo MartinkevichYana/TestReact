@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import Content from './Content';
 import ShiftTitle from "./ShiftTitle";
+import {IS_MOBILE} from "../../constants";
 
 const SvgIcon = styled.svg`
     width: 15px;
@@ -38,31 +39,31 @@ const GridItemContent = styled.div`
 const ShiftItem = (props) => {
 
     return (
-        <Content className={props.isMobile ? "mobile border" : "border"}>
-            {props.isMobile && <ShiftTitle titleName={props.contentTitle[0]} isMobile={props.isMobile} />}
-            <GridItem className={props.isMobile ? "mobile" : ""}>
-                <GridItemContent className={props.isMobile ? "mobile" : ""}>
-                    <SvgIcon><use xlinkHref='/images/sprite.svg#man'></use></SvgIcon>
+        <Content className={IS_MOBILE ? "mobile border" : "border"}>
+            {IS_MOBILE && <ShiftTitle titleName={"Date"} />}
+            <GridItem className={IS_MOBILE ? "mobile" : ""}>
+                <GridItemContent className={IS_MOBILE ? "mobile" : ""}>
+                    <SvgIcon><use xlinkHref='/images/sprite.svg#man' /></SvgIcon>
                     <TextNearImg>{props.date}</TextNearImg>
                 </GridItemContent>
             </GridItem>
-            {props.isMobile && <ShiftTitle titleName={props.contentTitle[1]} isMobile={props.isMobile} />}
-            <GridItem className={props.isMobile ? "mobile" : ""}>
+            {IS_MOBILE && <ShiftTitle titleName={"Shift type"} />}
+            <GridItem className={IS_MOBILE ? "mobile" : ""}>
                 {props.type}
             </GridItem>
-            {props.isMobile && <ShiftTitle titleName={props.contentTitle[2]} isMobile={props.isMobile} />}
-            <GridItem className={props.isMobile ? "mobile" : ""}>
-                <GridItemContent className={props.isMobile ? "mobile" : ""}>
-                    <SvgIcon color={'transparent'}><use xlinkHref='/images/sprite.svg#clock'></use></SvgIcon>
+            {IS_MOBILE && <ShiftTitle titleName={"Period"} />}
+            <GridItem className={IS_MOBILE ? "mobile" : ""}>
+                <GridItemContent className={IS_MOBILE ? "mobile" : ""}>
+                    <SvgIcon color={'transparent'}><use xlinkHref='/images/sprite.svg#clock' /></SvgIcon>
                     <TextNearImg>{props.period}</TextNearImg>
                 </GridItemContent>
             </GridItem>
-            {props.isMobile && <ShiftTitle titleName={props.contentTitle[3]} isMobile={props.isMobile} />}
-            <GridItem className={props.isMobile ? "mobile" : ""}>{props.hours}</GridItem>
-            {props.isMobile && <ShiftTitle titleName={props.contentTitle[4]} isMobile={props.isMobile} />}
-            <GridItem className={props.isMobile ? "mobile" : ""}>{props.salary}</GridItem>
-            {props.isMobile && <ShiftTitle titleName={props.contentTitle[5]} isMobile={props.isMobile} />}
-            <GridItem className={props.isMobile ? "mobile" : ""}>{props.bonus}</GridItem>
+            {IS_MOBILE && <ShiftTitle titleName={"Hours"} />}
+            <GridItem className={IS_MOBILE ? "mobile" : ""}>{props.hours}</GridItem>
+            {IS_MOBILE && <ShiftTitle titleName={"Salary (gross)"} />}
+            <GridItem className={IS_MOBILE ? "mobile" : ""}>{props.salary}</GridItem>
+            {IS_MOBILE && <ShiftTitle titleName={"Bonus (gross)"} />}
+            <GridItem className={IS_MOBILE ? "mobile" : ""}>{props.bonus}</GridItem>
         </Content>
     );
 }

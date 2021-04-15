@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const GridContent = styled.div`
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1.2fr;
+    grid-template-columns: 1.2fr 0.8fr 1.1fr 0.7fr 1fr 1.2fr;
     &.border {
         margin-bottom: 10px;
         border: 1px solid rgba(12, 20, 39, 0.05);
