@@ -8,14 +8,14 @@ const SvgIcon = styled.svg`
     width: 15px;
     height: 15px;
     fill: ${props => props.color ? props.color : "#0c1427"};
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         display: none;
     }
 `
 
 const TextNearImg = styled.span`
     margin-left: 10px;
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         margin-left: 0;
     }
 `

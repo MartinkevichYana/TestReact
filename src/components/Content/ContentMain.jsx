@@ -8,20 +8,23 @@ import Button from "./Button";
 import {IS_MOBILE} from "../../constants";
 
 const Wrapper = styled.div`
+    width: 100%;
     padding: 44px;
+    margin-left: 250px;
+    box-sizing: border-box;
     
     @media (max-width: 1440px) {
         padding: calc(15px + (44 - 15)*(100vw - 320px)/(1440 - 320));
     }
     &.mobile {
-        opacity: 0.2;
+        margin-left: 0;
     }
 `
 
-const ContentMain = ({content, isSidebarVisible}) => {
+const ContentMain = ({content}) => {
 
     return (
-        <Wrapper className={isSidebarVisible && IS_MOBILE ? "mobile" : ""}>
+        <Wrapper className={IS_MOBILE ? "mobile" : ""}>
             {!IS_MOBILE && <Header>
                 <div><img src={arrow} alt="arrow left" /></div>
                 <Button />

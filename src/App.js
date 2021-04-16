@@ -9,8 +9,6 @@ import {IS_MOBILE} from "./constants";
 
 const Wrapper = styled.div`
     display: flex;
-    max-width: 1440px;
-    margin: 0 auto;
     color: #0C1427;
     background: #fff;
     &.mobile {
@@ -38,7 +36,7 @@ function App() {
           <GlobalStyle />
           {IS_MOBILE && <HeaderMobile handleSidebarVisibility={ () => setIsSidebarVisible(!isSidebarVisible)} isSidebarVisible={isSidebarVisible} />}
           {isSidebarVisible && <Sidebar />}
-          <ContentMain content={initialStore.data} isSidebarVisible={isSidebarVisible} />
+          <ContentMain content={initialStore.data} />
       </Wrapper>
   );
 }

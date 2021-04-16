@@ -7,17 +7,23 @@ import {IS_MOBILE} from "../../constants";
 const Container = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 15px;
 `
+
+const User = styled(Container)`
+    max-width: 134px;
+`
+
 const BottomIcon = () => {
     return (
-        <div>
-            <Container>
+        <Container>
+            <User>
                 <img src={avatar} alt='Darlene Robertson' />
                 <span>Darlene Robertson</span>
-                {IS_MOBILE && <Button /> }
-            </Container>
-        </div>
+            </User>
+            {IS_MOBILE && <Button /> }
+        </Container>
     );
 }
 

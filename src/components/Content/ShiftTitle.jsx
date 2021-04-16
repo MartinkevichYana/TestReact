@@ -8,7 +8,6 @@ const GridTitle = styled.div`
     font-weight: 500;
     text-transform: uppercase;
     color: #8697A8;
-    text-align: left;
     &.mobile {
         padding: 8px 0;
         width: 48%;

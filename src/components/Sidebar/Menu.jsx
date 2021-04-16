@@ -19,7 +19,7 @@ const Item = styled.a`
     background: ${props => props.active ? "#fff" : "transparent"};
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s all;
+    transition: all .2s;
     
     &:hover {
         background: #fff;

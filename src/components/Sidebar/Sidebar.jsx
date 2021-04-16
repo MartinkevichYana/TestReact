@@ -5,10 +5,11 @@ import BottomIcon from './BottomIcon';
 import {IS_MOBILE} from "../../constants";
 
 const Wrapper = styled.div`
+    position: fixed;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    max-width: 247px;
+    width: 247px;
+    height: 100%;
     padding: 45px 24px;
     box-sizing: border-box;
     background: #E8EAF0;
@@ -18,13 +19,10 @@ const Wrapper = styled.div`
     }
     
     &.mobile {
-        position: absolute;
         top: 56px;
         z-index: 10;
         width: 100%;
-        max-width: 320px;
         background: #fff;
-        box-shadow: 0px 4px 7px rgb(12 20 39 / 10%);
     }
 `
 
